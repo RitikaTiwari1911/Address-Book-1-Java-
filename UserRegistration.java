@@ -36,6 +36,7 @@ public class UserRegistration {
 
     //method for phone number
     public static void phoneNumberValidation(){
+        System.out.println("Enter the phone number");
         String phoneNumber=input.nextLine();
 
         //regex expression for phone number
@@ -48,11 +49,27 @@ public class UserRegistration {
 
     }
 
+    //method for password
+    public static void passwordValidation(){
+        System.out.println("Enter the password");
+        String password= input.nextLine();
+
+        //regex expression for password
+        Pattern pattern=Pattern.compile("[a-zA-Z0-9@#$%&!]{8,}");
+        Matcher matcher=pattern.matcher(password);
+        if(matcher.matches()==true)
+            System.out.println("VALID PASSWORD");
+        else
+            System.out.println("INVALID PASSWORD");
+
+    }
+
     //main method
     public static void main(String args[]){
         firstNameValidation();
         lastNameValidation();
         phoneNumberValidation();
+        passwordValidation();
 
     }
 }

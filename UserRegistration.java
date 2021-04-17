@@ -17,11 +17,28 @@ public class UserRegistration {
             if (matcher.matches() == true)
                 System.out.println("First name is: " + firstName);
             else
-                System.out.println("INVALID NAME");
+                System.out.println("INVALID FIRST NAME");
         }
+
+    //method for last name
+    public static void lastNameValidation() {
+
+        System.out.println("Enter the last name: ");
+        String lastName = input.nextLine();
+
+        //regex expression for last name
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}");
+        Matcher matcher = pattern.matcher(lastName);
+        if (matcher.matches() == true)
+            System.out.println("Last name is: " + lastName);
+        else
+            System.out.println("INVALID LAST NAME");
+    }
 
     //main method
     public static void main(String args[]){
         firstNameValidation();
+        lastNameValidation();
+
     }
 }

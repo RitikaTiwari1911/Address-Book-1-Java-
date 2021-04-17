@@ -55,7 +55,7 @@ public class UserRegistration {
         String password= input.nextLine();
 
         //regex expression for password
-        Pattern pattern=Pattern.compile("(([a-zA-Z@#$%&%!])(?=.*[0-9])(?=.*[A-Z])).{8,}");
+        Pattern pattern=Pattern.compile("(([a-zA-Z)(?=.*[@#$%&%!])(?=.*[0-9])(?=.*[A-Z])).{8,}");
         Matcher matcher=pattern.matcher(password);
         if(matcher.matches()==true)
             System.out.println("VALID PASSWORD");

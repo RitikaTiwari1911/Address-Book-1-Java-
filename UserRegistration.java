@@ -34,33 +34,18 @@ public class UserRegistration {
             System.out.println("INVALID LAST NAME");
     }
 
-    //method for phone number
-    public static void phoneNumberValidation(){
-        System.out.println("Enter the phone number");
-        String phoneNumber=input.nextLine();
+    //method for email
+    public static void emailValidation(){
+        System.out.println("Enter the email");
+        String email=input.nextLine();
 
-        //regex expression for phone number
-        Pattern pattern=Pattern.compile("^[0-9]{2}[: :][0-9]{10}$");
-        Matcher matcher= pattern.matcher(phoneNumber);
+        //regex expression for email
+	Pattern pattern=Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$");
+        Matcher matcher= pattern.matcher(email);
         if (matcher.matches()==true)
-            System.out.println("Phone number is: "+phoneNumber);
+            System.out.println("email is: "+email);
         else
-            System.out.println("INVALID PHONE NUMBER");
-
-    }
-
-    //method for password
-    public static void passwordValidation(){
-        System.out.println("Enter the password");
-        String password= input.nextLine();
-
-        //regex expression for password
-        Pattern pattern=Pattern.compile("(([a-zA-Z)(?=.*[@#$%&%!])(?=.*[0-9])(?=.*[A-Z])).{8,}");
-        Matcher matcher=pattern.matcher(password);
-        if(matcher.matches()==true)
-            System.out.println("VALID PASSWORD");
-        else
-            System.out.println("INVALID PASSWORD");
+            System.out.println("INVALID EMAIL");
 
     }
 
@@ -68,8 +53,8 @@ public class UserRegistration {
     public static void main(String args[]){
         firstNameValidation();
         lastNameValidation();
-        phoneNumberValidation();
-        passwordValidation();
+        emailValidation();
+       
 
     }
 }
